@@ -1,4 +1,5 @@
- pluginManagement {
+include(":core-model")
+pluginManagement {
     repositories {
         google {
             content {
@@ -23,4 +24,11 @@ dependencyResolutionManagement {
 
 rootProject.name = "Userapp"
 include(":app")
- 
+include(":core-adapter")
+include(":core-Interface")
+include(":core-retrofit")
+include(":core-service")
+include(":core-untils")
+include(":mylibrary")
+include(":core-payzalo")
+include(":core-activity")

@@ -1,13 +1,14 @@
 package com.user.appbanhang.activity;
 
-import static java.lang.Thread.sleep;
-
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+
+import com.example.core.activity.DangNhapActivity;
+import com.example.core.activity.MainActivity;
 import com.user.appbanhang.R;
 
 import io.paperdb.Paper;

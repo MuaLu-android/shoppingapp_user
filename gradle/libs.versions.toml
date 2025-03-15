@@ -14,9 +14,44 @@ composeBom = "2024.04.01"
 googleGmsGoogleServices = "4.4.2"
 firebaseAuth = "23.1.0"
 firebaseMessaging = "24.0.3"
-
+glide = "4.16.0"
+rxjava = "3.1.3"
+rxandroid = "3.0.2"
+retrofit = "2.9.0"
+converter-gson = "2.9.0"
+converter-simplexml  = "2.9.0"
+adapter-rxjava3 = "2.9.0"
+notification-badge = "1.0.4"
+eventbus = "3.3.1"
+paperdb = "2.7.2"
+gson = "2.11.0"
+lottie = "6.5.2"
+neumorphism = "0.3.2"
+imagepicker = "2.1"
+auth = "1.19.0"
+mobile-sdk = "1.0.7"
+okhttp = "4.6.0"
+commons-codec = "1.14"
 [libraries]
+rxandroid = { group = "io.reactivex.rxjava3", name = "rxandroid", version.ref = "rxandroid" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "converter-gson" }
+converter-simplexml = { group = "com.squareup.retrofit2", name = "converter-simplexml", version.ref = "converter-simplexml" }
+adapter-rxjava3 = { group = "com.squareup.retrofit2", name = "adapter-rxjava3", version.ref = "adapter-rxjava3" }
+notification-badge = { group = "com.nex3z", name = "notification-badge", version.ref = "notification-badge" }
+eventbus = { group = "org.greenrobot", name = "eventbus", version.ref = "eventbus" }
+paperdb = { group = "io.github.pilgr", name = "paperdb", version.ref = "paperdb" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
+neumorphism = { group = "com.github.fornewid", name = "neumorphism", version.ref = "neumorphism" }
+imagepicker = { group = "com.github.dhaval2404", name = "imagepicker", version.ref = "imagepicker" }
+google-auth-library-oauth2-http = { group = "com.google.auth", name = "google-auth-library-oauth2-http", version.ref = "auth" }
+mobile-sdk = { group = "com.github.momo-wallet", name = "mobile-sdk", version.ref = "mobile-sdk" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+commons-codec = { group = "commons-codec", name = "commons-codec", version.ref = "commons-codec" }
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+rxjava = { group = "io.reactivex.rxjava3", name = "rxjava", version.ref = "rxjava" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
@@ -40,4 +75,5 @@ firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 

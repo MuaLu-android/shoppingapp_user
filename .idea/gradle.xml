@@ -11,6 +11,15 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/core-Interface" />
+            <option value="$PROJECT_DIR$/core-activity" />
+            <option value="$PROJECT_DIR$/core-adapter" />
+            <option value="$PROJECT_DIR$/core-model" />
+            <option value="$PROJECT_DIR$/core-payzalo" />
+            <option value="$PROJECT_DIR$/core-retrofit" />
+            <option value="$PROJECT_DIR$/core-service" />
+            <option value="$PROJECT_DIR$/core-untils" />
+            <option value="$PROJECT_DIR$/mylibrary" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

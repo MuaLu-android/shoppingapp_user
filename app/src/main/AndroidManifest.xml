@@ -26,50 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.user.appbanhang.activity.TimKiemActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.user.appbanhang.activity.XemdonActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.user.appbanhang.activity.ThanhToanActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.user.appbanhang.activity.ResetPassActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.user.appbanhang.activity.DangNhapActivity"
-            android:exported="true">
-
-        </activity>
-        <activity
-            android:name="com.user.appbanhang.activity.DangKiActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.user.appbanhang.activity.GioHangActivity"
-            android:exported="false"
-            android:label="@string/title_activity_gio_hang"
-            android:theme="@style/Theme.Appbanhang" />
-        <activity
-            android:name="com.user.appbanhang.activity.ChitietActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.user.appbanhang.activity.LapTopActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.user.appbanhang.activity.DienThoaiactivity"
-            android:exported="false" />
-<!--        <activity-->
-<!--            android:name="com.user.appbanhang.activity.QuanLiActivity"-->
-<!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name="com.user.appbanhang.activity.ThemActivity"-->
-<!--            android:exported="false" />-->
-        <activity
-            android:name="com.user.appbanhang.activity.MainActivity"
-            android:exported="true" />
-        <service android:name=".Service.FirebaseMessgaeReciver"
+        <service android:name="com.example.core.service.firebasemessgae.FirebaseMessgaeReciver"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>

@@ -1,3 +1,5 @@
+import com.android.utils.TraceUtils.simpleId
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -56,7 +58,8 @@ android {
 }
 
 dependencies {
-
+    implementation(project(":core-service"))
+    implementation(project(":core-activity"))
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -78,43 +81,43 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation (libs.glide)
     //RxJava
-    implementation ("io.reactivex.rxjava3:rxjava:3.1.3")
-    implementation ("io.reactivex.rxjava3:rxandroid:3.0.2")
+    implementation (libs.rxjava)
+    implementation (libs.rxandroid)
 
     // Retrofit
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation (libs.retrofit)
 
     // Chuyển đổi JSON (gson) cho Retrofit
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation (libs.converter.gson)
 
     // Chuyển đổi XML (nếu cần) cho Retrofit
-    implementation ("com.squareup.retrofit2:converter-simplexml:2.9.0")
+    implementation (libs.converter.simplexml)
 
     // (Tùy chọn) Để hỗ trợ RxJava với Retrofit
-    implementation ("com.squareup.retrofit2:adapter-rxjava3:2.9.0")
+    implementation (libs.adapter.rxjava3)
     //badge
-    implementation ("com.nex3z:notification-badge:1.0.4")
+    implementation (libs.notification.badge)
     //evenbus
-    implementation("org.greenrobot:eventbus:3.3.1")
+    implementation(libs.eventbus)
     //paper
-    implementation ("io.github.pilgr:paperdb:2.7.2")
+    implementation (libs.paperdb)
     //Gson
-    implementation ("com.google.code.gson:gson:2.11.0")
+    implementation (libs.gson)
     //lottie
-    implementation ("com.airbnb.android:lottie:6.5.2")
+    implementation (libs.lottie)
     //neumophism
-    implementation ("com.github.fornewid:neumorphism:0.3.2")
+    implementation (libs.neumorphism)
     //imagepicker
-    implementation ("com.github.dhaval2404:imagepicker:2.1")
+    implementation (libs.imagepicker)
     //accestoken
-    implementation("com.google.auth:google-auth-library-oauth2-http:1.19.0")
+    implementation(libs.google.auth.library.oauth2.http)
     //momo
-    implementation("com.github.momo-wallet:mobile-sdk:1.0.7")
+    implementation(libs.mobile.sdk)
     //zalo pay
-    implementation("com.squareup.okhttp3:okhttp:4.6.0")
-    implementation("commons-codec:commons-codec:1.14")
+    implementation(libs.okhttp)
+    implementation(libs.commons.codec)
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)

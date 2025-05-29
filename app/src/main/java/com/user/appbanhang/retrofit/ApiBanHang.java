@@ -29,21 +29,21 @@ public interface ApiBanHang {
             @Field("page") int page,
             @Field("loai") int loai
     );
-    @POST("dangki1.php")
-    @FormUrlEncoded
-    Observable<UserModel> dangki(
-            @Field("email") String email,
-            @Field("pass") String pass,
-            @Field("username") String username,
-            @Field("mobile") String mobile,
-            @Field("uid") String uid
-    );
-    @POST("dangnhap1.php")
-    @FormUrlEncoded
-    Observable<UserModel> dangnhap(
-            @Field("email") String email,
-            @Field("pass") String pass
-    );
+//    @POST("dangki1.php")
+//    @FormUrlEncoded
+//    Observable<UserModel> dangki(
+//            @Field("email") String email,
+//            @Field("pass") String pass,
+//            @Field("username") String username,
+//            @Field("mobile") String mobile,
+//            @Field("uid") String uid
+//    );
+//    @POST("dangnhap1.php")
+//    @FormUrlEncoded
+//    Observable<UserModel> dangnhap(
+//            @Field("email") String email,
+//            @Field("pass") String pass
+//    );
     @POST("donhang1.php")
     @FormUrlEncoded
     Observable<MessageModel> creatOder(

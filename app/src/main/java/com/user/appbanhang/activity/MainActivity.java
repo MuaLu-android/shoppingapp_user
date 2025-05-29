@@ -143,8 +143,8 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position){
                     case 0:
-                        Intent trangchu = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(trangchu);
+                        Intent home = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(home);
                         break;
                     case 1:
                         Intent dienthoai = new Intent(getApplicationContext(), DienThoaiactivity.class);

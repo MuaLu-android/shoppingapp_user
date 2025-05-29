@@ -1,4 +1,5 @@
- pluginManagement {
+include(":core")
+pluginManagement {
     repositories {
         google {
             content {
@@ -23,4 +24,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "Userapp"
 include(":app")
- 
+include(":data")
+include(":domain")
+include(":presentation")
+include(":shared")

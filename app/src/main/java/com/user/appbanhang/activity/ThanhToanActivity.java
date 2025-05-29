@@ -81,7 +81,7 @@ public class ThanhToanActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
 
         // ZaloPay SDK Init
-        ZaloPaySDK.init(2553, Environment.SANDBOX);
+        ZaloPaySDK.init(2554, Environment.SANDBOX);
         initView();
         coutItem();
         initControl();
@@ -313,7 +313,7 @@ public class ThanhToanActivity extends AppCompatActivity {
                                         Utils.mangmuahang.clear();
                                         iddonhang = Integer.parseInt(messageModel.getIddonhang());
                                         Log.d("CHECK_LOG", "ID Đơn hàng sau khi parse: " + iddonhang);
-                                        requeszalo(messageModel.getIddonhang());
+                                        requeszalo();
                                     }, throwable -> {
                                         Log.e("CHECK_LOG", "Lỗi khi tạo đơn hàng: " + throwable.getMessage());
                                         Toast.makeText(getApplicationContext(), throwable.getMessage(),   Toast.LENGTH_SHORT).show();
@@ -324,31 +324,47 @@ public class ThanhToanActivity extends AppCompatActivity {
         });
     }
 
-    private void requeszalo(String iddonhang) {
+    private void requeszalo() {
         CreateOrder orderApi = new CreateOrder();
 
         try {
             JSONObject data = orderApi.createOrder("100");
             String code = data.getString("return_code");
             Toast.makeText(getApplicationContext(), "return_code: " + code, Toast.LENGTH_LONG).show();
-
+            Log.d("test", code);
             if (code.equals("1")) {
                 String token = data.getString("zp_trans_token");
+                Log.d("test", token);
+
                 ZaloPaySDK.getInstance().payOrder(ThanhToanActivity.this, token, "demozpdk://app", new PayOrderListener(){
 
                     @Override
                     public void onPaymentSucceeded(String s, String s1, String s2) {
-
+                        compositeDisposable.add(apiBanHang.updateTokenzalo(iddonhang, token)
+                                .subscribeOn(Schedulers.io())
+                                .observeOn(AndroidSchedulers.mainThread())
+                                .subscribe(messageModel -> {
+                                            if (messageModel.isSuccess()){
+                                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                                startActivity(intent);
+                                                finish();
+                                            }
+                                        },
+                                        throwable -> {
+                                            Log.d("erro", throwable.getMessage());
+                                        }
+                                ));
+                        Log.d("ZaloPay", "Thanh toán thành công! ID giao dịch: " + s);
                     }
 
                     @Override
                     public void onPaymentCanceled(String s, String s1) {
-
+                        Log.d("ZaloPay", "Giao dịch bị hủy: " + s1);
                     }
 
                     @Override
                     public void onPaymentError(ZaloPayError zaloPayError, String s, String s1) {
-
+                        Log.d("ZaloPay", "Lỗi thanh toán: " + zaloPayError.toString());
                     }
                 });
             }
@@ -362,5 +378,10 @@ public class ThanhToanActivity extends AppCompatActivity {
     protected void onDestroy() {
         compositeDisposable.clear();
         super.onDestroy();
+    }
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        ZaloPaySDK.getInstance().onResult(intent);
     }
 }

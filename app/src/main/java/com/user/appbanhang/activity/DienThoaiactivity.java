@@ -1,32 +1,28 @@
 package com.user.appbanhang.activity;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.user.appbanhang.R;
 import com.user.appbanhang.adapter.DienThoaiAdapter;
 import com.user.appbanhang.model.SanPhamMoi;
 import com.user.appbanhang.retrofit.ApiBanHang;
 import com.user.appbanhang.retrofit.RetrofitClient;
 import com.user.appbanhang.utils.Utils;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
-public class DienThoaiactivity extends AppCompatActivity {
+public class PhoneFragment extends Fragment {
     Toolbar toolbar;
     RecyclerView recyclerView;
     ApiBanHang apiBanHang;

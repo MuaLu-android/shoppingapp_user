@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.google.gms.google.services)
 }
 
@@ -43,7 +44,7 @@ android {
         dataBinding = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "2.0.0"
     }
     packaging {
         resources {
@@ -56,7 +57,7 @@ android {
 }
 
 dependencies {
-
+    implementation(project(":core"))
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -80,20 +81,20 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     //RxJava
-    implementation ("io.reactivex.rxjava3:rxjava:3.1.3")
-    implementation ("io.reactivex.rxjava3:rxandroid:3.0.2")
+    implementation (libs.rxjava3.rxjava)
+    implementation (libs.rxjava3.rxandroid)
 
     // Retrofit
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation (libs.retrofit2)
 
     // Chuyển đổi JSON (gson) cho Retrofit
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation (libs.converter.gson)
 
     // Chuyển đổi XML (nếu cần) cho Retrofit
     implementation ("com.squareup.retrofit2:converter-simplexml:2.9.0")
 
     // (Tùy chọn) Để hỗ trợ RxJava với Retrofit
-    implementation ("com.squareup.retrofit2:adapter-rxjava3:2.9.0")
+    implementation (libs.adapter.rxjava3)
     //badge
     implementation ("com.nex3z:notification-badge:1.0.4")
     //evenbus

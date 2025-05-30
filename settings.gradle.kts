@@ -22,7 +22,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Userapp"
+rootProject.name = "ALStore"
 include(":app")
 include(":data")
 include(":domain")

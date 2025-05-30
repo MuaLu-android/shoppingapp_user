@@ -55,7 +55,7 @@
             android:exported="false" />
         <activity
             android:name=".activity.DangNhapActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".activity.GioHangActivity"
             android:exported="false"
